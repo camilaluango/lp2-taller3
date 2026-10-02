@@ -14,20 +14,20 @@ from . import models
 
 def obtener_productos(db: Session, categoria_id: Optional[int] = None):
     """Retorna la lista de productos, opcionalmente filtrada por categoría."""
-    # TODO 1: construye la consulta base: db.query(models.Producto)
-    # TODO 2: si categoria_id no es None, agrega
-    #         .filter(models.Producto.categoria_id == categoria_id)
-    # TODO 3: retorna el resultado con .all()
+    query = db.query(models.Producto)
+    if categoria_id is not None:
+        query = query.filter(models.Producto.categoria_id == categoria_id)
+    return query.all()
     pass
 
 
 def obtener_producto_por_sku(db: Session, sku: str):
     """Retorna un producto por su SKU, o None si no existe."""
-    # TODO 4: db.query(models.Producto).filter(models.Producto.sku == sku).first()
+    return db.query(models.Producto).filter(models.Producto.sku == sku).first()
     pass
 
 
 def obtener_categorias(db: Session):
     """Retorna todas las categorías ordenadas por nombre."""
-    # TODO 5: db.query(models.Categoria).order_by(models.Categoria.nombre).all()
+    return db.query(models.Categoria).order_by(models.Categoria.nombre).all()
     pass
