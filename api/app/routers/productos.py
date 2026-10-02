@@ -20,8 +20,8 @@ router = APIRouter(prefix="/productos", tags=["productos"])
 @router.get("/", response_model=List[schemas.ProductoBase])
 def listar_productos(categoria_id: Optional[int] = None, db: Session = Depends(get_db)):
     """Lista productos. Admite ?categoria_id=<id> como filtro opcional."""
-    # TODO 1: llama a crud.obtener_productos(db, categoria_id) y retórnalo
-    pass
+    return crud.obtener_productos(db, categoria_id)
+
 
 
 @router.get("/{sku}", response_model=schemas.ProductoBase)
