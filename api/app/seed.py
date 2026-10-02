@@ -25,16 +25,17 @@ def cargar_datos():
     db = SessionLocal()
 
     try:
-        # TODO 1: Abre RUTA_PRODUCTOS con encoding="utf-8" y usa json.load()
-        #         para obtener la lista de productos.
-        # datos = ...
+        with open(RUTA_PRODUCTOS, "r", encoding="utf-8") as f:
+            datos = json.load(f)
+        
+        cargados = 0
 
-        # TODO 2: Por cada item en 'datos':
-        #   a) Busca la categoría por nombre:
-        #        categoria = db.query(Categoria).filter_by(
-        #            nombre=item["categoria"]).first()
-        #   b) Si no existe, créala, agrégala con db.add(categoria)
-        #      y usa db.flush() para obtener su id sin hacer commit todavía.
+        for item in datos:
+            categoria = db.query(Categoria).filter_by(nombre=item["categoria"]).first()
+            if categoria is None:
+                categoria = Categoria(nombre=item["categoria"])
+                db.add(categoria)
+                db.flush()
         #   c) Si ya existe un producto con ese sku
         #      (db.query(Producto).filter_by(sku=item["sku"]).first()),
         #      sáltalo con 'continue' para no duplicar.
@@ -45,7 +46,7 @@ def cargar_datos():
 
         # TODO 4: Imprime cuántos productos se cargaron, por ejemplo:
         #         print(f"Se cargaron {len(datos)} productos.")
-        pass
+        
     finally:
         db.close()
 
