@@ -1,32 +1,62 @@
 [
   {
-    "sku": "TEC-001",
-    "marca": "Logitech",
-    "nombre": "Mouse inalámbrico MX Master",
-    "precio": 349900,
-    "foto": "images/mouse-mx-master.jpg",
+    "sku": "PER-001",
+    "marca": "Maison Bruma",
+    "nombre": "Ámbar de Medianoche Eau de Parfum",
+    "precio": 189900,
+    "foto": "images/ambar-medianoche.jpg",
     "stock": 12,
     "activo": true,
-    "categoria": "Periféricos"
+    "categoria": "Perfumes"
   },
   {
-    "sku": "TEC-002",
-    "marca": "Kingston",
-    "nombre": "Memoria USB 64GB",
-    "precio": 39900,
-    "foto": "images/usb-kingston-64gb.jpg",
-    "stock": 40,
+    "sku": "PER-002",
+    "marca": "Jardín Secreto",
+    "nombre": "Rosa y Peonía Eau de Toilette",
+    "precio": 149900,
+    "foto": "images/rosa-peonia.jpg",
+    "stock": 18,
     "activo": true,
-    "categoria": "Almacenamiento"
+    "categoria": "Perfumes"
   },
   {
-    "sku": "AUD-001",
-    "marca": "Sony",
-    "nombre": "Audífonos WH-1000XM4",
-    "precio": 1199000,
-    "foto": "images/audifonos-sony.jpg",
+    "sku": "PER-003",
+    "marca": "Cítrico Atelier",
+    "nombre": "Bergamota Solar Eau de Parfum",
+    "precio": 219900,
+    "foto": "images/bergamota-solar.jpg",
+    "stock": 9,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-004",
+    "marca": "Botánica Nocturna",
+    "nombre": "Vainilla y Sándalo Eau de Parfum",
+    "precio": 199900,
+    "foto": "images/vainilla-sandalo.jpg",
+    "stock": 14,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-005",
+    "marca": "Costa de Luna",
+    "nombre": "Brisa Marina Eau de Toilette",
+    "precio": 129900,
+    "foto": "images/brisa-marina.jpg",
     "stock": 0,
     "activo": true,
-    "categoria": "Audio"
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-006",
+    "marca": "Maison Bruma",
+    "nombre": "Oud y Especias Eau de Parfum",
+    "precio": 289900,
+    "foto": "images/oud-especias.jpg",
+    "stock": 6,
+    "activo": true,
+    "categoria": "Perfumes"
   }
 ]
