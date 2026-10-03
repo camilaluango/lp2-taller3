@@ -36,13 +36,25 @@ def cargar_datos():
                 categoria = Categoria(nombre=item["categoria"])
                 db.add(categoria)
                 db.flush()
-        #   c) Si ya existe un producto con ese sku
-        #      (db.query(Producto).filter_by(sku=item["sku"]).first()),
-        #      sáltalo con 'continue' para no duplicar.
-        #   d) Crea el Producto con los campos del JSON y
-        #      categoria_id=categoria.id, y agrégalo con db.add(producto).
+                
+            producto_existente = db.query(Producto).filter_by(sku=item["sku"]).first()
+            if producto_existente is not None:
+                continue
 
-        # TODO 3: Confirma todo con db.commit()
+            producto = Producto(
+                sku=item["sku"],
+                marca=item["marca"],    
+                nombre=item["nombre"],
+                precio=item["precio"],
+                foto=item.get("foto"),  
+                stock=item["stock"],
+                activo=item["activo"],
+                categoria_id=categoria.id
+            )
+            db.add(producto)
+            cargados += 1 
+
+            db.commit()
 
         # TODO 4: Imprime cuántos productos se cargaron, por ejemplo:
         #         print(f"Se cargaron {len(datos)} productos.")
