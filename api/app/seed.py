@@ -31,33 +31,41 @@ def cargar_datos():
         cargados = 0
 
         for item in datos:
-            categoria = db.query(Categoria).filter_by(nombre=item["categoria"]).first()
+            categoria = (
+                db.query(Categoria)
+                .filter_by(nombre=item["categoria"])
+                .first()
+            )
+            
             if categoria is None:
                 categoria = Categoria(nombre=item["categoria"])
                 db.add(categoria)
                 db.flush()
                 
-            producto_existente = db.query(Producto).filter_by(sku=item["sku"]).first()
+            producto_existente = (
+                db.query(Producto)
+                .filter_by(sku=item["sku"])
+                .first()
+            )
+            
             if producto_existente is not None:
                 continue
 
-            producto = Producto(
-                sku=item["sku"],
-                marca=item["marca"],    
+            producto = Producto (
+                sku=item["sku"],    
+                marca=item["marca"],
                 nombre=item["nombre"],
                 precio=item["precio"],
                 foto=item.get("foto"),  
                 stock=item["stock"],
                 activo=item["activo"],
-                categoria_id=categoria.id
+                categoria_id=categoria.id,
             )
             db.add(producto)
             cargados += 1 
 
-            db.commit()
-
-        # TODO 4: Imprime cuántos productos se cargaron, por ejemplo:
-        #         print(f"Se cargaron {len(datos)} productos.")
+        db.commit()
+        print(f"Se cargaron {cargados} productos.")
         
     finally:
         db.close()
