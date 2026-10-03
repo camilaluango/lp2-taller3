@@ -31,10 +31,11 @@ def index():
 
 @main.route("/producto/<sku>")
 def detalle(sku):
-    # TODO 4: producto = api_client.obtener_producto(sku)
-    # TODO 5: si producto es None, abort(404)
-    # TODO 6: render_template("detalle.html", producto=producto)
-    pass
+    producto = api_client.obtener_producto(sku)
+    if producto is None:
+        abort(404)
+    return render_template("detalle.html", producto=producto)
+    
 
 
 @main.route("/categorias")
