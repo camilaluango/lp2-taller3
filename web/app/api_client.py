@@ -49,8 +49,14 @@ def obtener_producto(sku):
 
 def obtener_categorias():
     """Retorna la lista de categorías (dicts) desde la API.
-
-    TODO 8: Igual que obtener_productos() pero apuntando a
-            f"{current_app.config['API_URL']}/categorias/" y sin parámetros.
-    """
+"""
     
+    url = f"{current_app.config['API_URL']}/categorias/"
+    try:
+        respuesta = requests.get(url, timeout=TIMEOUT)
+        if respuesta.status_code == 200:
+            return respuesta.json()
+    except requests.RequestException:
+        return []
+
+    return []   
