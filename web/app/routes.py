@@ -21,7 +21,7 @@ def index():
 
     productos = api_client.obtener_productos(categoria_id)
     categorias = api_client.obtener_categorias()
-    render_template(
+    return render_template(
         "index.html",
         productos=productos,
         categorias=categorias,
