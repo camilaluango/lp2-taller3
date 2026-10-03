@@ -18,14 +18,26 @@ main = Blueprint("main", __name__)
 @main.route("/")
 def index():
     categoria_id = request.args.get("categoria", type=int)
+    casa_activa = request.args.get("casa")
 
     productos = api_client.obtener_productos(categoria_id)
     categorias = api_client.obtener_categorias()
+    casas = sorted(
+        {producto["marca"] for producto in productos if producto.get("marca")}
+    )
+    if casa_activa:
+        productos = [
+            producto for producto in productos
+            if producto.get("marca") == casa_activa
+        ]
+
     return render_template(
         "index.html",
         productos=productos,
         categorias=categorias,
-        categoria_id=categoria_id
+        categoria_id=categoria_id,
+        casas=casas,
+        casa_activa=casa_activa,
     )
 
 

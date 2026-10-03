@@ -16,6 +16,19 @@
     {% endfor %}
 </div>
 
+<div class="filtros">
+    <strong>Casa perfumera:</strong>
+    <a href="{{ url_for('main.index', categoria=categoria_id) if categoria_id else url_for('main.index') }}"
+       class="chip {% if not casa_activa %}chip-activo{% endif %}">Todas</a>
+
+    {% for casa in casas %}
+        <a href="{{ url_for('main.index', categoria=categoria_id, casa=casa) if categoria_id else url_for('main.index', casa=casa) }}"
+           class="chip {% if casa_activa == casa %}chip-activo{% endif %}">
+            {{ casa }}
+        </a>
+    {% endfor %}
+</div>
+
 <div class="catalogo">
     {% for producto in productos %}
         <div class="tarjeta-producto">

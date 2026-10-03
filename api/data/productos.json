@@ -58,5 +58,95 @@
     "stock": 6,
     "activo": true,
     "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-007",
+    "marca": "Versace",
+    "nombre": "Bright Crystal Eau de Toilette",
+    "precio": 379900,
+    "foto": "images/versace-bright-crystal.jpg",
+    "stock": 8,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-008",
+    "marca": "Versace",
+    "nombre": "Dylan Blue Pour Femme Eau de Parfum",
+    "precio": 429900,
+    "foto": "images/versace-dylan-blue-femme.jpg",
+    "stock": 5,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-009",
+    "marca": "Versace",
+    "nombre": "Eros Pour Homme Eau de Toilette",
+    "precio": 399900,
+    "foto": "images/versace-eros.jpg",
+    "stock": 7,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-010",
+    "marca": "Jean Paul Gaultier",
+    "nombre": "Le Male Eau de Toilette",
+    "precio": 459900,
+    "foto": "images/jpg-le-male.jpg",
+    "stock": 6,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-011",
+    "marca": "Jean Paul Gaultier",
+    "nombre": "Scandal Pour Homme Eau de Toilette",
+    "precio": 489900,
+    "foto": "images/jpg-scandal-pour-homme.jpg",
+    "stock": 4,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-012",
+    "marca": "Jean Paul Gaultier",
+    "nombre": "La Belle Eau de Parfum",
+    "precio": 499900,
+    "foto": "images/jpg-la-belle.jpg",
+    "stock": 5,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-013",
+    "marca": "Lattafa",
+    "nombre": "Yara Eau de Parfum",
+    "precio": 169900,
+    "foto": "images/lattafa-yara.jpg",
+    "stock": 15,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-014",
+    "marca": "Lattafa",
+    "nombre": "Khamrah Eau de Parfum",
+    "precio": 219900,
+    "foto": "images/lattafa-khamrah.jpg",
+    "stock": 10,
+    "activo": true,
+    "categoria": "Perfumes"
+  },
+  {
+    "sku": "PER-015",
+    "marca": "Lattafa",
+    "nombre": "Asad Eau de Parfum",
+    "precio": 179900,
+    "foto": "images/lattafa-asad.jpg",
+    "stock": 12,
+    "activo": true,
+    "categoria": "Perfumes"
   }
 ]
